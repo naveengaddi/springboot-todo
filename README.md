@@ -1,6 +1,11 @@
 # Spring Boot : Todo App (Backend Rest Api) + TDD 
 
-This is a simple todo app developed using spring boot 
+This simple todo rest api app uses Spring boot framework\
+Spring web (for rest api)\
+Spring jpa (for querying db)\
+Lombok(for logging)\
+and H2 (for in memory database)
+
 ### Start server
 ```shell
 ./gradlew clean build
