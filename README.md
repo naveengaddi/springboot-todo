@@ -3,7 +3,7 @@
 This simple todo rest api app uses Spring boot framework\
 Spring web (for rest api)\
 Spring jpa (for querying db)\
-Lombok(for logging)\
+Lombok(for reducing boilerplate code ex: logging, builder, constructor etc)\
 and H2 (for in memory database)
 
 ### Start server
