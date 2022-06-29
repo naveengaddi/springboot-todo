@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Builder;
 import lombok.Data;
 import lombok.ToString;
+import org.springframework.stereotype.Component;
 
 import java.time.OffsetDateTime;
 
