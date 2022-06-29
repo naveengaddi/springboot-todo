@@ -2,9 +2,9 @@ package com.todo.app.service;
 
 import com.todo.app.entity.Address;
 import com.todo.app.repository.AddressRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class AddressService {
@@ -18,4 +18,7 @@ public class AddressService {
         return addressRepository.save(address);
     }
 
+    public Optional<Address> getById(Long id) {
+        return addressRepository.findById(id);
+    }
 }

@@ -6,6 +6,8 @@ import com.todo.app.repository.AddressRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Optional;
+
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
@@ -31,5 +33,15 @@ public class AddressServiceTest {
         Address addressResponse = addressService.save(address);
 
         verify(addressRepository).save(address);
+    }
+
+    @Test
+    void shouldReturnAddressById() throws Exception {
+        Address address = new Address("dummyStreet", "dummyCity", 123543, "dummyCountry", "dummyWareHouseName");
+        when(addressRepository.findById(any(Long.class))).thenReturn(java.util.Optional.of(address));
+
+        Optional<Address> addressResponse = addressService.getById(1L);
+
+        verify(addressRepository).findById(1L);
     }
 }

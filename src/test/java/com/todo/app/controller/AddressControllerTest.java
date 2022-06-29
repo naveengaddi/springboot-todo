@@ -38,4 +38,16 @@ class AddressControllerTest {
         Assertions.assertEquals(address, addressResponse.getBody());
     }
 
+    @Test
+    void shouldReturnAddressById() throws Exception {
+        Address address = new Address("dummyStreet", "dummyCity", 123543, "dummyCountry", "dummyWareHouseName");
+        when(addressService.getById(any(Long.class))).thenReturn(java.util.Optional.of(address));
+
+        ResponseEntity<Object> addressResponse = addressController.getById(1L);
+
+        verify(addressService).getById(1L);
+        Assertions.assertEquals(HttpStatus.OK, addressResponse.getStatusCode());
+        Assertions.assertEquals(java.util.Optional.of(address), addressResponse.getBody());
+    }
+
 }
