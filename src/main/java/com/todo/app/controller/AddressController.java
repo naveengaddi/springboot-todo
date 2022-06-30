@@ -28,7 +28,8 @@ public class AddressController {
     @GetMapping("/address/{id}")
     public ResponseEntity<Object> getById(@PathVariable("id") long id) {
         Optional<Address> address = addressService.getById(id);
-
+        if (address.isEmpty())
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(address);
         return ResponseEntity.status(HttpStatus.OK).body(address);
     }
 }

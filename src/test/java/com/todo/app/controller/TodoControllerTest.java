@@ -1,5 +1,6 @@
 package com.todo.app.controller;
 
+import com.todo.app.controller.TodoController;
 import com.todo.app.controller.dto.TodoDto;
 import com.todo.app.entity.Todo;
 import com.todo.app.repository.TodoRepository;
@@ -13,7 +14,9 @@ import java.time.OffsetDateTime;
 import java.util.Optional;
 
 import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.*;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
+import static org.mockito.Mockito.when;
 
 
 class TodoControllerTest {

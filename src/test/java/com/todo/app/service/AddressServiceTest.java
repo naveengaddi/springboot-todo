@@ -26,7 +26,7 @@ public class AddressServiceTest {
     }
 
     @Test
-    void shouldSaveAddress() throws Exception {
+    void shouldSaveAddress() {
         Address address = new Address("dummyStreet", "dummyCity", 123543, "dummyCountry", "dummyWareHouseName");
         when(addressRepository.save(any(Address.class))).thenReturn(address);
 
@@ -36,7 +36,7 @@ public class AddressServiceTest {
     }
 
     @Test
-    void shouldReturnAddressById() throws Exception {
+    void shouldReturnAddressById() {
         Address address = new Address("dummyStreet", "dummyCity", 123543, "dummyCountry", "dummyWareHouseName");
         when(addressRepository.findById(any(Long.class))).thenReturn(java.util.Optional.of(address));
 
